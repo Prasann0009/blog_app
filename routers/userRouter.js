@@ -8,7 +8,7 @@ const isAuth = require("../middlewares/isAuthMiddleware");
 
 const userRouter = express.Router();
 
-authRouter
+userRouter
   .post("/register", registerController)
   .post("/login", loginController)
   .post("/logout", isAuth, logoutController);

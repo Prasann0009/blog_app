@@ -6,11 +6,11 @@ const {
 } = require("../controllers/userController");
 const isAuth = require("../middlewares/isAuthMiddleware");
 
-const authRouter = express.Router();
+const userRouter = express.Router();
 
 authRouter
   .post("/register", registerController)
   .post("/login", loginController)
   .post("/logout", isAuth, logoutController);
 
-module.exports = authRouter;
+module.exports = userRouter;

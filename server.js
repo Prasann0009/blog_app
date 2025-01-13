@@ -6,7 +6,7 @@ const mongodbSession = require("connect-mongodb-session")(session);
 
 //file-imports
 const db = require("./db");
-const authRouter = require("./routers/userRouter");
+const userRouter = require("./routers/userRouter");
 const blogRouter = require("./routers/blogRouter");
 const followRouter = require("./routers/followRouter");
 const isAuth = require("./middlewares/isAuthMiddleware");
@@ -31,7 +31,7 @@ app.use(
   })
 );
 
-app.use("/auth", authRouter);
+app.use("/user", userRouter);
 app.use("/blog", blogRouter);
 app.use("/follow", isAuth, followRouter);
 
